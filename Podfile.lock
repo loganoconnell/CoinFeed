@@ -1,0 +1,15 @@
+PODS:
+  - SwiftyJSON (4.0.0-alpha.1)
+  - VegaScrollFlowLayout (1.1)
+
+DEPENDENCIES:
+  - SwiftyJSON (= 4.0.0-alpha.1)
+  - VegaScrollFlowLayout
+
+SPEC CHECKSUMS:
+  SwiftyJSON: dc88934f85fb50b263b1632b9cbad3402505783e
+  VegaScrollFlowLayout: 9158061f29179147755f937c2b21693fc5dbbac3
+
+PODFILE CHECKSUM: 9c0e1a7d4989af2397c839f66a81c54e0f8bdd1c
+
+COCOAPODS: 1.0.1

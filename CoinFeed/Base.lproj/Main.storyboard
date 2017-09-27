@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zvl-LX-LnT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="r29-b3-X12">
+            <objects>
+                <navigationController id="zvl-LX-LnT" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="OoY-Li-lcK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="idE-8C-3KI" kind="relationship" relationship="rootViewController" id="Lgc-gc-jov"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Va9-z2-GnB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1219" y="83"/>
+        </scene>
+        <!--Feed View Controller-->
+        <scene sceneID="iV1-CB-Xbs">
+            <objects>
+                <viewController id="idE-8C-3KI" customClass="FeedViewController" customModule="CoinFeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nrX-pe-p4I"/>
+                        <viewControllerLayoutGuide type="bottom" id="3rM-mp-xW0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vdF-iX-Wxf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="89B-cv-yhb">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewLayout key="collectionViewLayout" id="zIJ-eO-OlV" customClass="VegaScrollFlowLayout" customModule="VegaScrollFlowLayout"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CoinCell" id="ajs-l8-zyl" customClass="CoinCell" customModule="CoinFeed" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="idE-8C-3KI" id="j7V-57-jFj"/>
+                                    <outlet property="delegate" destination="idE-8C-3KI" id="nnA-69-5Dz"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="89B-cv-yhb" firstAttribute="leading" secondItem="vdF-iX-Wxf" secondAttribute="leading" id="AOa-IN-Ew4"/>
+                            <constraint firstItem="89B-cv-yhb" firstAttribute="top" secondItem="nrX-pe-p4I" secondAttribute="bottom" id="LHv-uW-Xyk"/>
+                            <constraint firstAttribute="trailing" secondItem="89B-cv-yhb" secondAttribute="trailing" id="mJD-PE-g9O"/>
+                            <constraint firstItem="89B-cv-yhb" firstAttribute="bottom" secondItem="3rM-mp-xW0" secondAttribute="top" id="nAU-Km-zRU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="rQA-iA-heo"/>
+                    <connections>
+                        <outlet property="coinFeed" destination="89B-cv-yhb" id="Kxt-tf-4Jm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WaM-fv-v65" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-466.39999999999998" y="81.409295352323838"/>
+        </scene>
+    </scenes>
+</document>
